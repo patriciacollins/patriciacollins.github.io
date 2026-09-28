@@ -10,59 +10,57 @@
       color-scheme: light dark;
       --bg: #ffffff;
       --fg: #1f2328;
-      --muted: #59636e;
-      --user: #1a7f37;
-      --path: #0550ae;
-      --link: #8250df;
+      --muted: #8c959f;
+      --line: #d8dee4;
+      --link: #0550ae;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1e1e1e; --fg: #e6edf3; --muted: #9198a1;
-        --user: #7ee787; --path: #79c0ff; --link: #d2a8ff;
-      }
+      :root { --bg: #1e1e1e; --fg: #e6edf3; --muted: #7d8590; --line: #3a3f46; --link: #79c0ff; }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font: 15px/1.6 ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font: 16px/1.75 ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
       -webkit-font-smoothing: antialiased;
     }
     main {
-      padding: 1.5rem;
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 12vh 1.5rem 4rem;
+    }
+    .file {
+      color: var(--muted);
+      font-size: 13px;
+      padding-bottom: .75rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    pre {
+      margin: 0;
+      font: inherit;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
     }
-    h1 { all: unset; }
-    .user { color: var(--user); }
-    .path { color: var(--path); }
-    .sym { color: var(--muted); }
-    .cmd { font-weight: 700; }
-    a { color: var(--link); text-underline-offset: 3px; }
-    a:hover { text-decoration-thickness: 2px; }
-    .cursor {
-      display: inline-block;
-      width: .6em;
-      height: 1.15em;
-      vertical-align: text-bottom;
-      background: var(--fg);
-      animation: blink 1s steps(1) infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-    @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+    h1, h2 { all: unset; font-weight: 700; }
+    .md { color: var(--muted); font-weight: 400; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
   </style>
 </head>
 <body>
-<main><span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cmd">whoami</span>
-<h1>Trish Collins</h1>
+<main>
+<div class="file">trish_collins.md</div>
+<pre><h1><span class="md"># </span>Trish Collins</h1>
 
-<span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cmd">cat about.txt</span>
 Trish Collins is a software engineer working in New York City.
 
-<span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cmd">ls links</span>
-<a href="https://github.com/patriciacollins">github</a>    <a href="https://www.linkedin.com/in/trish-collins/">linkedin</a>
+<h2><span class="md">## </span>Links</h2>
 
-<span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cursor" aria-hidden="true"></span></main>
+<span class="md">- [</span><a href="https://github.com/patriciacollins">GitHub</a><span class="md">](github.com/patriciacollins)</span>
+<span class="md">- [</span><a href="https://www.linkedin.com/in/trish-collins/">LinkedIn</a><span class="md">](linkedin.com/in/trish-collins)</span>
+</pre>
+</main>
 </body>
 </html>
