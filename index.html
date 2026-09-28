@@ -3,25 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Patricia Collins</title>
+  <title>Trish Collins</title>
+  <meta name="description" content="Trish Collins is a software engineer working in New York City.">
   <style>
-    :root { color-scheme: light dark; --bg: #faf9f7; --fg: #1f1f1f; --muted: #666; --accent: #2f6fdb; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #161616; --fg: #eee; --muted: #aaa; --accent: #7aa7ff; } }
-    body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, sans-serif; }
-    main { max-width: 38rem; margin: 0 auto; padding: 5rem 1.25rem; }
-    h1 { font-size: 2.25rem; margin: 0 0 .25rem; }
-    .tagline { color: var(--muted); margin: 0 0 2rem; }
-    a { color: var(--accent); }
-    footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; }
+    :root {
+      color-scheme: light dark;
+      --bg: #fcfcfc;
+      --fg: #111;
+      --muted: #6f6f6f;
+      --line: #e5e5e5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111; --fg: #ededed; --muted: #a0a0a0; --line: #2a2a2a; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 15px/1.7 system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 34rem;
+      margin: 0 auto;
+      padding: 18vh 1.5rem 4rem;
+    }
+    h1 {
+      font-size: 15px;
+      font-weight: 500;
+      margin: 0 0 1.5rem;
+    }
+    p {
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      margin: 0;
+      padding: 1.5rem 0 0;
+      border-top: 1px solid var(--line);
+    }
+    a {
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: border-color .15s;
+    }
+    a:hover { border-color: var(--fg); }
   </style>
 </head>
 <body>
   <main>
-    <h1>Patricia Collins</h1>
-    <p class="tagline">A short tagline goes here.</p>
-    <p>Write a few sentences about yourself or what this page is for.</p>
-    <p><a href="https://github.com/patriciacollins">GitHub</a></p>
-    <footer>&copy; 2026 Patricia Collins</footer>
+    <h1>Trish Collins</h1>
+    <p>Trish Collins is a software engineer working in New York City.</p>
+    <ul>
+      <li><a href="https://github.com/patriciacollins">GitHub</a></li>
+    </ul>
   </main>
 </body>
 </html>
