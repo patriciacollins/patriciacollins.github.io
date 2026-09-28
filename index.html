@@ -9,30 +9,38 @@
     :root {
       color-scheme: light dark;
       --bg: #ffffff;
-      --fg: #000000;
-      --muted: #6e6e6e;
-      --link: #0033b3;
+      --fg: #1f2328;
+      --muted: #59636e;
+      --user: #1a7f37;
+      --path: #0550ae;
+      --link: #8250df;
     }
     @media (prefers-color-scheme: dark) {
-      :root { --bg: #1e1e1e; --fg: #f2f2f2; --muted: #8e8e8e; --link: #6cb6ff; }
+      :root {
+        --bg: #1e1e1e; --fg: #e6edf3; --muted: #9198a1;
+        --user: #7ee787; --path: #79c0ff; --link: #d2a8ff;
+      }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font: 14px/1.5 ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font: 15px/1.6 ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
       -webkit-font-smoothing: antialiased;
     }
     main {
-      padding: 1.25rem 1.5rem;
+      padding: 1.5rem;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
     }
     h1 { all: unset; }
-    .prompt { color: var(--muted); }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .user { color: var(--user); }
+    .path { color: var(--path); }
+    .sym { color: var(--muted); }
+    .cmd { font-weight: 700; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
     .cursor {
       display: inline-block;
       width: .6em;
@@ -46,12 +54,15 @@
   </style>
 </head>
 <body>
-<main><span class="prompt">trish@nyc ~ %</span> whoami
+<main><span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cmd">whoami</span>
 <h1>Trish Collins</h1>
-<span class="prompt">trish@nyc ~ %</span> cat about.txt
+
+<span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cmd">cat about.txt</span>
 Trish Collins is a software engineer working in New York City.
-<span class="prompt">trish@nyc ~ %</span> ls links
+
+<span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cmd">ls links</span>
 <a href="https://github.com/patriciacollins">github</a>    <a href="https://www.linkedin.com/in/trish-collins/">linkedin</a>
-<span class="prompt">trish@nyc ~ %</span> <span class="cursor" aria-hidden="true"></span></main>
+
+<span class="user">trish@nyc</span> <span class="path">~</span> <span class="sym">%</span> <span class="cursor" aria-hidden="true"></span></main>
 </body>
 </html>
