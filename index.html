@@ -7,19 +7,22 @@
   <meta name="description" content="Trish Collins is a software engineer working in New York City.">
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #fcfcfc;
-      --fg: #111;
-      --muted: #6f6f6f;
-      --line: #e5e5e5;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #111; --fg: #ededed; --muted: #a0a0a0; --line: #2a2a2a; }
+      color-scheme: dark;
+      --bg: #0a1224;
+      --fg: #e8ecf4;
+      --muted: #8b97ad;
+      --line: #1e2a44;
+      --accent: #7fb2ff;
     }
     * { box-sizing: border-box; }
+    html { background: var(--bg); }
     body {
       margin: 0;
-      background: var(--bg);
+      min-height: 100vh;
+      background:
+        radial-gradient(60rem 40rem at 85% -10%, rgba(80, 120, 255, .16), transparent 60%),
+        radial-gradient(40rem 30rem at -10% 110%, rgba(40, 180, 200, .08), transparent 60%),
+        var(--bg);
       color: var(--fg);
       font: 15px/1.7 system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -52,7 +55,8 @@
       border-bottom: 1px solid var(--line);
       transition: border-color .15s;
     }
-    a:hover { border-color: var(--fg); }
+    a:hover { color: var(--accent); border-color: var(--accent); }
+    ::selection { background: var(--accent); color: var(--bg); }
   </style>
 </head>
 <body>
